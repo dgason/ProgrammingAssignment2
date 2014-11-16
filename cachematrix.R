@@ -14,13 +14,18 @@
 ##  implements a cache for an inverse matrix
 
 makeCacheMatrix <- function(x = matrix()) {
-  
+  #here "m" represents the cache for the matrix
   m <- NULL
+  
+  #getter and setter for makeCacheMatrix
+  #note that if a new value is set here, the cache, m, is reset
   set <- function(y) {
     x <<- y
     m <<- NULL
   }
   get <- function() x
+  
+  #getter and setter for the matrix value m
   setmatrix <- function(mtx) m <<- mtx
   getmatrix <- function() m
   list(set = set, get = get,
@@ -28,7 +33,7 @@ makeCacheMatrix <- function(x = matrix()) {
        getmatrix = getmatrix)  
 }
 
-
+ 
 ## cacheSolve
 ##  this function calculates the inverse or solution to a matrix
 ##  it first checks to see if the inverse has already been calculated
